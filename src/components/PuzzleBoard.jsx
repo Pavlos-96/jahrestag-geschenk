@@ -3,7 +3,29 @@ import { appConfig } from '../data/questions';
 
 // Calculate optimal grid size for any number of questions
 const calculateGridSize = (totalPieces) => {
-  // Try to make it as square as possible
+  // 1. Versuche zuerst, ein Raster ohne leere Felder zu finden (rows * cols === totalPieces)
+  //    und dabei möglichst "quadratisch" zu bleiben.
+  let bestExact = null;
+
+  for (let rows = 1; rows <= Math.sqrt(totalPieces); rows++) {
+    if (totalPieces % rows === 0) {
+      const cols = totalPieces / rows;
+      const diff = Math.abs(rows - cols);
+      const hasAtLeastTwo = rows > 1 && cols > 1;
+
+      if (!bestExact || diff < bestExact.diff || (!bestExact.hasAtLeastTwo && hasAtLeastTwo)) {
+        bestExact = { rows, cols, diff, hasAtLeastTwo };
+      }
+    }
+  }
+
+  // Wenn es eine sinnvolle exakte Aufteilung gibt (z.B. 4x7 bei 28 Teilen), nutze sie.
+  if (bestExact && bestExact.hasAtLeastTwo) {
+    return { rows: bestExact.rows, cols: bestExact.cols, totalCells: totalPieces };
+  }
+
+  // 2. Fallback: wie bisher möglichst quadratisches Raster,
+  //    auch wenn dadurch einige Zellen leer bleiben.
   const sqrt = Math.sqrt(totalPieces);
   const rows = Math.ceil(sqrt);
   const cols = Math.ceil(totalPieces / rows);
