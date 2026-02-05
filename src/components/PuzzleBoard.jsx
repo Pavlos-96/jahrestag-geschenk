@@ -1,11 +1,18 @@
 import { motion } from 'framer-motion';
 import { appConfig } from '../data/questions';
 
-export default function PuzzleBoard({ revealedPieces, totalPieces = 9 }) {
-  // Create 3x3 grid positions
-  const gridSize = Math.sqrt(totalPieces);
-  const pieceWidth = 100 / gridSize;
-  const pieceHeight = 100 / gridSize;
+// Calculate optimal grid size for any number of questions
+const calculateGridSize = (totalPieces) => {
+  // Try to make it as square as possible
+  const sqrt = Math.sqrt(totalPieces);
+  const rows = Math.ceil(sqrt);
+  const cols = Math.ceil(totalPieces / rows);
+
+  return { rows, cols, totalCells: rows * cols };
+};
+
+export default function PuzzleBoard({ revealedPieces, totalPieces }) {
+  const { rows, cols, totalCells } = calculateGridSize(totalPieces);
 
   return (
     <motion.div
@@ -18,14 +25,19 @@ export default function PuzzleBoard({ revealedPieces, totalPieces = 9 }) {
         <div
           className="absolute inset-0 grid"
           style={{
-            gridTemplateColumns: `repeat(${gridSize}, 1fr)`,
-            gridTemplateRows: `repeat(${gridSize}, 1fr)`,
+            gridTemplateColumns: `repeat(${cols}, 1fr)`,
+            gridTemplateRows: `repeat(${rows}, 1fr)`,
             gap: '1px',
           }}
         >
-          {Array.from({ length: totalPieces }).map((_, index) => {
-            const row = Math.floor(index / gridSize);
-            const col = index % gridSize;
+          {Array.from({ length: totalCells }).map((_, index) => {
+            // Skip if this cell is beyond our actual pieces
+            if (index >= totalPieces) {
+              return <div key={index} className="bg-pink-100" />;
+            }
+
+            const row = Math.floor(index / cols);
+            const col = index % cols;
             const isRevealed = revealedPieces.includes(index);
 
             return (
@@ -43,8 +55,8 @@ export default function PuzzleBoard({ revealedPieces, totalPieces = 9 }) {
                   className="absolute inset-0"
                   style={{
                     backgroundImage: `url(${appConfig.puzzleImage})`,
-                    backgroundSize: `${gridSize * 100}% ${gridSize * 100}%`,
-                    backgroundPosition: `${col * (100 / (gridSize - 1))}% ${row * (100 / (gridSize - 1))}%`,
+                    backgroundSize: `${cols * 100}% ${rows * 100}%`,
+                    backgroundPosition: `${cols > 1 ? col * (100 / (cols - 1)) : 0}% ${rows > 1 ? row * (100 / (rows - 1)) : 0}%`,
                     filter: isRevealed ? 'none' : 'blur(8px) grayscale(100%)',
                   }}
                 />
@@ -83,7 +95,7 @@ export default function PuzzleBoard({ revealedPieces, totalPieces = 9 }) {
               linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
               linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px)
             `,
-            backgroundSize: `${pieceWidth}% ${pieceHeight}%`,
+            backgroundSize: `${100 / cols}% ${100 / rows}%`,
           }}
         />
       </div>

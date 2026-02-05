@@ -51,44 +51,20 @@ export default function RevealScreen({ correctAnswers, totalQuestions, onRestart
 
   return (
     <motion.div
-      className="min-h-screen flex flex-col items-center justify-center px-5 py-8 relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-between p-6 relative overflow-hidden bg-gradient-to-br from-pink-50 to-pink-100"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      {/* Background hearts */}
-      {Array.from({ length: 8 }).map((_, i) => (
-        <motion.span
-          key={i}
-          className="absolute text-pink-300 pointer-events-none"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            fontSize: `${0.8 + Math.random() * 1.2}rem`,
-          }}
-          animate={{
-            y: [-15, 15],
-            rotate: [-10, 10],
-            opacity: [0.3, 0.6],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-        >
-          ❤️
-        </motion.span>
-      ))}
-
+      {/* Top Section - Text */}
       <motion.div
-        className="w-full max-w-sm text-center z-10"
-        initial={{ scale: 0.8, y: 50 }}
-        animate={{ scale: 1, y: 0 }}
-        transition={{ type: 'spring', damping: 20 }}
+        className="w-full max-w-sm text-center z-10 pt-4"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.3, type: 'spring' }}
       >
         {/* Celebration icon */}
         <motion.div
-          className="text-6xl mb-4"
+          className="text-5xl mb-3"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 10, -10, 0],
@@ -105,68 +81,56 @@ export default function RevealScreen({ correctAnswers, totalQuestions, onRestart
         <motion.h1
           className="text-3xl font-bold text-pink-600 mb-2"
           style={{ fontFamily: "'Playfair Display', serif" }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
         >
           {appConfig.revealTitle}
         </motion.h1>
 
         {/* Subtitle */}
         <motion.h2
-          className="text-xl text-gray-700 mb-4"
+          className="text-xl text-gray-700"
           style={{ fontFamily: "'Playfair Display', serif" }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
         >
           {appConfig.revealSubtitle}
         </motion.h2>
+      </motion.div>
 
-        {/* The revealed image - mobile optimized */}
-        <motion.div
-          className="mb-4 rounded-2xl overflow-hidden shadow-xl"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.7, type: 'spring' }}
-        >
+      {/* Middle Section - Fullscreen Image */}
+      <motion.div
+        className="w-full max-w-md flex-1 flex items-center justify-center z-10"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.6, type: 'spring', damping: 20 }}
+      >
+        <div className="w-full rounded-3xl overflow-hidden shadow-2xl">
           <img
             src={appConfig.puzzleImage}
             alt="Überraschung"
-            className="w-full h-48 object-cover"
+            className="w-full h-auto max-h-[60vh] object-cover"
           />
-        </motion.div>
+        </div>
+      </motion.div>
 
+      {/* Bottom Section - Message & Actions */}
+      <motion.div
+        className="w-full max-w-sm text-center z-10 pb-4"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.9 }}
+      >
         {/* Message */}
         <motion.p
-          className="text-base text-gray-600 mb-4 px-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
+          className="text-base text-gray-700 mb-4 px-2 font-medium"
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {appConfig.revealMessage}
         </motion.p>
-
-        {/* Score - compact for mobile */}
-        <motion.div
-          className="bg-white/80 backdrop-blur-sm rounded-xl p-3 mb-4 shadow-lg"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1 }}
-        >
-          <p className="text-gray-500 text-xs mb-0.5">Du hast</p>
-          <p className="text-2xl font-bold text-pink-500">
-            {correctAnswers} von {totalQuestions}
-          </p>
-          <p className="text-gray-500 text-xs">Fragen richtig beantwortet!</p>
-        </motion.div>
 
         {/* Decorative elements */}
         <motion.div
           className="flex justify-center gap-3 text-2xl mb-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.3 }}
+          transition={{ delay: 1.1 }}
         >
           <span>🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
           <span>💕</span>
@@ -175,11 +139,26 @@ export default function RevealScreen({ correctAnswers, totalQuestions, onRestart
           <span>🏰</span>
         </motion.div>
 
-        {/* Restart button - mobile optimized */}
+        {/* Score - compact */}
+        <motion.div
+          className="bg-white/90 backdrop-blur-sm rounded-xl p-3 mb-4 shadow-lg inline-block"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.3 }}
+        >
+          <p className="text-gray-500 text-xs mb-0.5">Du hast</p>
+          <p className="text-2xl font-bold text-pink-500">
+            {correctAnswers} von {totalQuestions}
+          </p>
+          <p className="text-gray-500 text-xs">richtig beantwortet!</p>
+        </motion.div>
+
+        {/* Restart button */}
         <motion.button
           onClick={onRestart}
-          className="w-full px-6 py-3 bg-white/80 text-pink-500 rounded-full shadow-lg
-                     active:shadow-md transition-all duration-300 active:bg-white font-medium"
+          className="w-full px-6 py-3.5 bg-gradient-to-r from-pink-400 to-pink-500 text-white
+                     rounded-full shadow-lg active:shadow-md transition-all duration-300
+                     active:from-pink-500 active:to-pink-600 font-medium"
           whileTap={{ scale: 0.97 }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -187,18 +166,34 @@ export default function RevealScreen({ correctAnswers, totalQuestions, onRestart
         >
           Nochmal spielen 🔄
         </motion.button>
+
+        {/* Love message */}
+        <motion.p
+          className="mt-4 text-pink-400 text-base"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.7 }}
+        >
+          Ich liebe dich! 💖
+        </motion.p>
       </motion.div>
 
-      {/* Love message at bottom */}
-      <motion.p
-        className="absolute bottom-6 text-center text-pink-400 text-base"
-        style={{ fontFamily: "'Playfair Display', serif" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
+      {/* Decorative sparkles */}
+      <motion.span
+        className="absolute top-10 left-6 text-2xl"
+        animate={{ rotate: [0, 20, -20, 0], opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 3, repeat: Infinity }}
       >
-        Ich liebe dich! 💖
-      </motion.p>
+        ✨
+      </motion.span>
+      <motion.span
+        className="absolute top-10 right-6 text-2xl"
+        animate={{ rotate: [0, -20, 20, 0], opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+      >
+        💖
+      </motion.span>
     </motion.div>
   );
 }

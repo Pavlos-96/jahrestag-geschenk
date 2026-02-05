@@ -5,7 +5,7 @@
 // - question: Die Frage (Text)
 // - questionImage: (OPTIONAL) Pfad zu einem Bild für die Frage, z.B. "/images/foto.jpg"
 //                  Bei Bild-Fragen wird das Puzzle ausgeblendet für mehr Platz
-// - answers: 4 Antwortmöglichkeiten
+// - answers: 3 Antwortmöglichkeiten
 //            WICHTIG: Mehrere Antworten können correct: true haben!
 // - correctFeedback: Text der bei richtiger Antwort angezeigt wird
 // - feedbackImage: (OPTIONAL) Auflösungsbild - wird nach der Antwort gezeigt
@@ -32,8 +32,7 @@ export const questions = [
     answers: [
       { id: "a", text: "Im Café", correct: false },
       { id: "b", text: "Auf einer Party", correct: true },
-      { id: "c", text: "Bei der Arbeit", correct: false },
-      { id: "d", text: "Im Park", correct: false }
+      { id: "c", text: "Bei der Arbeit", correct: false }
     ],
     correctFeedback: "Genau! Das war der Anfang von allem...",
     feedbackImage: "/images/erstes-treffen.jpg"  // TODO: Dein Bild hier
@@ -44,8 +43,7 @@ export const questions = [
     answers: [
       { id: "a", text: "Pizza", correct: true },
       { id: "b", text: "Sushi", correct: false },
-      { id: "c", text: "Burger", correct: false },
-      { id: "d", text: "Pasta", correct: false }
+      { id: "c", text: "Burger", correct: false }
     ],
     correctFeedback: "Mmh, lecker! Das war so ein schöner Abend.",
     feedbackImage: "/images/erstes-essen.jpg"  // TODO: Dein Bild hier
@@ -56,8 +54,7 @@ export const questions = [
     answers: [
       { id: "a", text: "Titanic", correct: false },
       { id: "b", text: "The Notebook", correct: false },
-      { id: "c", text: "Inception", correct: true },
-      { id: "d", text: "Avatar", correct: false }
+      { id: "c", text: "Inception", correct: true }
     ],
     correctFeedback: "Ein Traum in einem Traum... wie unsere Liebe!",
     feedbackImage: "/images/filmabend.jpg"  // TODO: Dein Bild hier
@@ -68,8 +65,7 @@ export const questions = [
     answers: [
       { id: "a", text: "Lasagne", correct: true },
       { id: "b", text: "Schnitzel", correct: false },
-      { id: "c", text: "Curry", correct: false },
-      { id: "d", text: "Ramen", correct: false }
+      { id: "c", text: "Curry", correct: false }
     ],
     correctFeedback: "Du kennst mich so gut!",
     feedbackImage: "/images/lieblingsessen.jpg"  // TODO: Dein Bild hier
@@ -80,8 +76,7 @@ export const questions = [
     answers: [
       { id: "a", text: "Frühling", correct: false },
       { id: "b", text: "Sommer", correct: false },
-      { id: "c", text: "Herbst", correct: true },
-      { id: "d", text: "Winter", correct: false }
+      { id: "c", text: "Herbst", correct: true }
     ],
     correctFeedback: "Die bunten Blätter, warmer Kakao und Kuschelzeit!",
     feedbackImage: "/images/herbst.jpg"  // TODO: Dein Bild hier
@@ -92,8 +87,7 @@ export const questions = [
     answers: [
       { id: "a", text: "Ausschlafen & Frühstücken", correct: true },
       { id: "b", text: "Wandern gehen", correct: false },
-      { id: "c", text: "Shoppen", correct: false },
-      { id: "d", text: "Sport machen", correct: false }
+      { id: "c", text: "Shoppen", correct: false }
     ],
     correctFeedback: "Die beste Art, den Tag zu beginnen - zusammen!",
     feedbackImage: "/images/wochenende.jpg"  // TODO: Dein Bild hier
@@ -104,8 +98,7 @@ export const questions = [
     answers: [
       { id: "a", text: "Perfect - Ed Sheeran", correct: false },
       { id: "b", text: "All of Me - John Legend", correct: true },
-      { id: "c", text: "Thinking Out Loud", correct: false },
-      { id: "d", text: "A Thousand Years", correct: false }
+      { id: "c", text: "Thinking Out Loud", correct: false }
     ],
     correctFeedback: "All of me loves all of you...",
     feedbackImage: "/images/lieblingslied.jpg"  // TODO: Dein Bild hier
@@ -116,8 +109,7 @@ export const questions = [
     answers: [
       { id: "a", text: "Ein Bär", correct: false },
       { id: "b", text: "Ein Hund", correct: true },
-      { id: "c", text: "Eine Katze", correct: false },
-      { id: "d", text: "Ein Pinguin", correct: false }
+      { id: "c", text: "Eine Katze", correct: false }
     ],
     correctFeedback: "Loyal, verspielt und immer an deiner Seite!",
     feedbackImage: "/images/tier.jpg"  // TODO: Dein Bild hier
@@ -128,8 +120,18 @@ export const questions = [
     answers: [
       { id: "a", text: "Paris", correct: false },
       { id: "b", text: "Edinburgh", correct: true },
-      { id: "c", text: "Rom", correct: false },
-      { id: "d", text: "Barcelona", correct: false }
+      { id: "c", text: "Rom", correct: false }
+    ],
+    correctFeedback: "Rate mal wohin die Reise geht... 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    feedbackImage: "/images/reise.jpg"  // TODO: Dein Bild hier
+  },
+  {
+    id: 10,
+    question: "Wohin würde ich am liebsten mit dir reisen?",
+    answers: [
+      { id: "a", text: "Paris", correct: false },
+      { id: "b", text: "Edinburgh", correct: true },
+      { id: "c", text: "Rom", correct: false }
     ],
     correctFeedback: "Rate mal wohin die Reise geht... 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     feedbackImage: "/images/reise.jpg"  // TODO: Dein Bild hier

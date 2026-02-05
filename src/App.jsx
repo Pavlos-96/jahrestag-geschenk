@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import WelcomeScreen from './components/WelcomeScreen';
 import QuizCard from './components/QuizCard';
@@ -15,12 +15,26 @@ const STATES = {
   REVEAL: 'reveal',
 };
 
+// Create random order for puzzle pieces
+const createRandomOrder = (totalPieces) => {
+  const indices = Array.from({ length: totalPieces }, (_, i) => i);
+  // Fisher-Yates shuffle
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  return indices;
+};
+
 function App() {
   const [gameState, setGameState] = useState(STATES.WELCOME);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [revealedPieces, setRevealedPieces] = useState([]);
   const [lastAnswer, setLastAnswer] = useState(null);
+
+  // Create random order once at the start
+  const randomPieceOrder = useMemo(() => createRandomOrder(questions.length), []);
 
   const currentQuestion = questions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
@@ -39,12 +53,15 @@ function App() {
 
     if (answer.correct) {
       setCorrectAnswers((prev) => prev + 1);
-      // Reveal a puzzle piece (in order)
-      setRevealedPieces((prev) => [...prev, prev.length]);
+      // Reveal next puzzle piece in random order
+      setRevealedPieces((prev) => {
+        const nextIndex = randomPieceOrder[prev.length];
+        return [...prev, nextIndex];
+      });
     }
 
     setGameState(STATES.FEEDBACK);
-  }, [currentQuestion]);
+  }, [currentQuestion, randomPieceOrder]);
 
   const handleContinue = useCallback(() => {
     if (isLastQuestion) {
