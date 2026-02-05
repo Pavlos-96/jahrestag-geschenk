@@ -160,5 +160,5 @@ export const appConfig = {
 
   // Das Bild das enthüllt wird (lege es in src/assets/images/ ab)
   // Kann Edinburgh sein oder ein Bild von euch beiden
-  puzzleImage: "/images/edinburgh.jpeg"
+  puzzleImage: "/edinburgh.jpg"
 };
