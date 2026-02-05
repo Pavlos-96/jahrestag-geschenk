@@ -28,14 +28,15 @@
 export const questions = [
   {
     id: 1,
-    question: "Wo haben wir uns zum ersten Mal getroffen?",
+    question: "Wann hatten wir diesen schönen Tag mit Miri und Sina?",
+    questionImage: "/images/1-Frage.jpeg",
     answers: [
-      { id: "a", text: "Im Café", correct: false },
-      { id: "b", text: "Auf einer Party", correct: true },
-      { id: "c", text: "Bei der Arbeit", correct: false }
+      { id: "a", text: "April", correct: true },
+      { id: "b", text: "Mai", correct: false },
+      { id: "c", text: "Juni", correct: false }
     ],
     correctFeedback: "Genau! Das war der Anfang von allem...",
-    feedbackImage: "/images/erstes-treffen.jpg"  // TODO: Dein Bild hier
+    feedbackImage: "/images/1-Antwort.jpeg"  // TODO: Dein Bild hier
   },
   {
     id: 2,
@@ -159,5 +160,5 @@ export const appConfig = {
 
   // Das Bild das enthüllt wird (lege es in src/assets/images/ ab)
   // Kann Edinburgh sein oder ein Bild von euch beiden
-  puzzleImage: "/edinburgh.jpg"
+  puzzleImage: "/images/edinburgh.jpeg"
 };

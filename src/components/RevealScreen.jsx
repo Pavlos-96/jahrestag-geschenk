@@ -105,7 +105,7 @@ export default function RevealScreen({ correctAnswers, totalQuestions, onRestart
           <img
             src={appConfig.puzzleImage}
             alt="Überraschung"
-            className="w-full h-auto max-h-[60vh] object-cover"
+            className="w-full h-auto max-h-[60vh] object-contain bg-black"
           />
         </div>
       </motion.div>

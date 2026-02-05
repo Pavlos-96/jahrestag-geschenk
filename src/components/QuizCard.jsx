@@ -59,7 +59,7 @@ export default function QuizCard({
           <img
             src={question.questionImage}
             alt="Frage-Bild"
-            className="w-full h-48 object-cover"
+            className="w-full max-h-[60vh] object-contain"
           />
         </motion.div>
       )}
@@ -111,7 +111,7 @@ export default function QuizCard({
                     <img
                       src={answer.image}
                       alt={answer.text}
-                      className="w-12 h-12 object-cover rounded-lg"
+                      className="w-12 h-12 object-contain rounded-lg bg-black/5"
                     />
                     <span className="text-gray-700 text-base">{answer.text}</span>
                   </div>
@@ -120,7 +120,7 @@ export default function QuizCard({
                     <img
                       src={answer.gif}
                       alt={answer.text}
-                      className="w-12 h-12 object-cover rounded-lg"
+                      className="w-12 h-12 object-contain rounded-lg bg-black/5"
                     />
                     <span className="text-gray-700 text-base">{answer.text}</span>
                   </div>

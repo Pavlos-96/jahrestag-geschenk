@@ -134,13 +134,13 @@ export default function AnswerFeedback({
               <img
                 src={wrongGif}
                 alt="Feedback"
-                className="w-full h-40 object-cover"
+                className="w-full max-h-[40vh] object-contain bg-black"
               />
             ) : feedbackImage ? (
               <img
                 src={feedbackImage}
                 alt="Auflösung"
-                className="w-full h-56 object-cover"
+                className="w-full max-h-[60vh] object-contain bg-black"
               />
             ) : null}
           </motion.div>
