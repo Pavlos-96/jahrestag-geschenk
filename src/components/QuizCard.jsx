@@ -48,12 +48,28 @@ export default function QuizCard({
         </div>
       </div>
 
+      {/* Question Image - if present */}
+      {question.questionImage && (
+        <motion.div
+          className="mb-4 rounded-2xl overflow-hidden shadow-lg"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.4 }}
+        >
+          <img
+            src={question.questionImage}
+            alt="Frage-Bild"
+            className="w-full h-48 object-cover"
+          />
+        </motion.div>
+      )}
+
       {/* Question - mobile optimized, no speech bubble */}
       <motion.div
         className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-5 mb-4"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, delay: question.questionImage ? 0.1 : 0 }}
       >
         <h2
           className="text-xl text-center text-gray-700 font-medium leading-relaxed"

@@ -1,10 +1,29 @@
 // Quiz-Fragen für das Jahrestag-Quiz
 // HIER KANNST DU DEINE EIGENEN FRAGEN EINTRAGEN!
+//
 // Jede Frage hat:
-// - question: Die Frage
-// - answers: 4 Antwortmöglichkeiten (eine muss correct: true haben)
+// - question: Die Frage (Text)
+// - questionImage: (OPTIONAL) Pfad zu einem Bild für die Frage, z.B. "/images/foto.jpg"
+//                  Bei Bild-Fragen wird das Puzzle ausgeblendet für mehr Platz
+// - answers: 4 Antwortmöglichkeiten
+//            WICHTIG: Mehrere Antworten können correct: true haben!
 // - correctFeedback: Text der bei richtiger Antwort angezeigt wird
-// - feedbackGif: URL zu einem GIF (optional, von Giphy oder lokal)
+// - feedbackImage: (OPTIONAL) Auflösungsbild - wird nach der Antwort gezeigt
+//                  Bei RICHTIG: direkt das Bild
+//                  Bei FALSCH: erst GIF, dann das Bild als "richtige Antwort"
+//
+// FLOW:
+// - Richtige Antwort: "Richtig!" + feedbackImage + correctFeedback
+// - Falsche Antwort:  "Knapp daneben!" + GIF → Klick → feedbackImage + "Die Antwort war..."
+//
+// BEISPIEL:
+// {
+//   id: 1,
+//   question: "Wo war unser erstes Date?",
+//   answers: [...],
+//   correctFeedback: "Genau! Das war so ein schöner Abend...",
+//   feedbackImage: "/images/erstes-date.jpg"  // Foto von dem Ort
+// }
 
 export const questions = [
   {
@@ -17,7 +36,7 @@ export const questions = [
       { id: "d", text: "Im Park", correct: false }
     ],
     correctFeedback: "Genau! Das war der Anfang von allem...",
-    feedbackGif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+    feedbackImage: "/images/erstes-treffen.jpg"  // TODO: Dein Bild hier
   },
   {
     id: 2,
@@ -29,7 +48,7 @@ export const questions = [
       { id: "d", text: "Pasta", correct: false }
     ],
     correctFeedback: "Mmh, lecker! Das war so ein schöner Abend.",
-    feedbackGif: "https://media.giphy.com/media/4ayiIWaq2VULC/giphy.gif"
+    feedbackImage: "/images/erstes-essen.jpg"  // TODO: Dein Bild hier
   },
   {
     id: 3,
@@ -41,7 +60,7 @@ export const questions = [
       { id: "d", text: "Avatar", correct: false }
     ],
     correctFeedback: "Ein Traum in einem Traum... wie unsere Liebe!",
-    feedbackGif: "https://media.giphy.com/media/xT0GqssRweIhlz209i/giphy.gif"
+    feedbackImage: "/images/filmabend.jpg"  // TODO: Dein Bild hier
   },
   {
     id: 4,
@@ -53,7 +72,7 @@ export const questions = [
       { id: "d", text: "Ramen", correct: false }
     ],
     correctFeedback: "Du kennst mich so gut!",
-    feedbackGif: "https://media.giphy.com/media/3o7TKU8RvQuomFfUUU/giphy.gif"
+    feedbackImage: "/images/lieblingsessen.jpg"  // TODO: Dein Bild hier
   },
   {
     id: 5,
@@ -65,7 +84,7 @@ export const questions = [
       { id: "d", text: "Winter", correct: false }
     ],
     correctFeedback: "Die bunten Blätter, warmer Kakao und Kuschelzeit!",
-    feedbackGif: "https://media.giphy.com/media/l3q2zxUCPX4rmXbag/giphy.gif"
+    feedbackImage: "/images/herbst.jpg"  // TODO: Dein Bild hier
   },
   {
     id: 6,
@@ -77,7 +96,7 @@ export const questions = [
       { id: "d", text: "Sport machen", correct: false }
     ],
     correctFeedback: "Die beste Art, den Tag zu beginnen - zusammen!",
-    feedbackGif: "https://media.giphy.com/media/xT9DPIBYf0pAviBLzO/giphy.gif"
+    feedbackImage: "/images/wochenende.jpg"  // TODO: Dein Bild hier
   },
   {
     id: 7,
@@ -89,7 +108,7 @@ export const questions = [
       { id: "d", text: "A Thousand Years", correct: false }
     ],
     correctFeedback: "All of me loves all of you...",
-    feedbackGif: "https://media.giphy.com/media/l0HlPystfePnAI3G8/giphy.gif"
+    feedbackImage: "/images/lieblingslied.jpg"  // TODO: Dein Bild hier
   },
   {
     id: 8,
@@ -101,7 +120,7 @@ export const questions = [
       { id: "d", text: "Ein Pinguin", correct: false }
     ],
     correctFeedback: "Loyal, verspielt und immer an deiner Seite!",
-    feedbackGif: "https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif"
+    feedbackImage: "/images/tier.jpg"  // TODO: Dein Bild hier
   },
   {
     id: 9,
@@ -113,7 +132,7 @@ export const questions = [
       { id: "d", text: "Barcelona", correct: false }
     ],
     correctFeedback: "Rate mal wohin die Reise geht... 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-    feedbackGif: "https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif"
+    feedbackImage: "/images/reise.jpg"  // TODO: Dein Bild hier
   }
 ];
 

@@ -33,7 +33,8 @@ function App() {
     setLastAnswer({
       isCorrect: answer.correct,
       feedback: currentQuestion.correctFeedback,
-      feedbackGif: currentQuestion.feedbackGif,
+      feedbackImage: currentQuestion.feedbackImage,
+      hadImage: !!currentQuestion.questionImage,
     });
 
     if (answer.correct) {
@@ -73,11 +74,13 @@ function App() {
         {/* Quiz */}
         {gameState === STATES.QUIZ && (
           <div key="quiz" className="min-h-screen flex flex-col items-center justify-center p-4">
-            {/* Puzzle preview */}
-            <PuzzleBoard
-              revealedPieces={revealedPieces}
-              totalPieces={questions.length}
-            />
+            {/* Puzzle preview - hidden when question has an image */}
+            {!currentQuestion.questionImage && (
+              <PuzzleBoard
+                revealedPieces={revealedPieces}
+                totalPieces={questions.length}
+              />
+            )}
 
             {/* Question */}
             <QuizCard
@@ -93,17 +96,19 @@ function App() {
         {/* Feedback */}
         {gameState === STATES.FEEDBACK && (
           <div key="feedback" className="min-h-screen flex flex-col items-center justify-center p-4">
-            {/* Show puzzle in background */}
-            <PuzzleBoard
-              revealedPieces={revealedPieces}
-              totalPieces={questions.length}
-            />
+            {/* Show puzzle in background - hidden when question had an image */}
+            {!lastAnswer?.hadImage && (
+              <PuzzleBoard
+                revealedPieces={revealedPieces}
+                totalPieces={questions.length}
+              />
+            )}
 
             {/* Feedback overlay */}
             <AnswerFeedback
               isCorrect={lastAnswer?.isCorrect}
               feedback={lastAnswer?.feedback}
-              feedbackGif={lastAnswer?.feedbackGif}
+              feedbackImage={lastAnswer?.feedbackImage}
               onContinue={handleContinue}
               isLastQuestion={isLastQuestion}
             />
