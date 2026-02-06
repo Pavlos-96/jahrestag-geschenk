@@ -99,7 +99,7 @@ function App() {
 
         {/* Quiz */}
         {gameState === STATES.QUIZ && (
-          <div key="quiz" className="min-h-screen flex flex-col items-center justify-center p-4 w-full max-w-2xl mx-auto">
+          <div key="quiz" className="min-h-screen flex flex-col items-center justify-start pt-2 px-4 pb-4 w-full max-w-2xl mx-auto">
             {/* Fragebild mit Puzzle als Overlay oben rechts */}
             {currentQuestion.questionImage && (
               <div className="relative rounded-2xl overflow-hidden shadow-lg mb-4 w-full">
