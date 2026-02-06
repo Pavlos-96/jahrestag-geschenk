@@ -31,10 +31,11 @@ export default function AnswerFeedback({
     if (isCorrect) {
       // Small confetti burst for correct answer
       confetti({
-        particleCount: 50,
-        spread: 60,
+        particleCount: 25,
+        spread: 50,
         origin: { y: 0.7 },
-        colors: ['#FFB6C1', '#FF69B4', '#FFD700', '#FFC0CB']
+        colors: ['#FFB6C1', '#FF69B4', '#FFD700', '#FFC0CB'],
+        disableForReducedMotion: true
       });
     }
   }, [isCorrect]);

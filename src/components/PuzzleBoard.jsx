@@ -58,19 +58,23 @@ function PuzzleGrid({ rows, cols, totalCells, totalPieces, revealedPieces }) {
           return (
             <div
               key={index}
-              className="relative overflow-hidden transition-opacity duration-300"
-              style={{ opacity: isRevealed ? 1 : 0.3 }}
+              className="relative overflow-hidden"
+              style={{
+                opacity: isRevealed ? 1 : 0.3,
+                willChange: 'opacity'
+              }}
             >
-              {/* Background image piece */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url(${appConfig.puzzleImage})`,
-                  backgroundSize: `${cols * 100}% ${rows * 100}%`,
-                  backgroundPosition: `${cols > 1 ? col * (100 / (cols - 1)) : 0}% ${rows > 1 ? row * (100 / (rows - 1)) : 0}%`,
-                  filter: isRevealed ? 'none' : 'blur(8px) grayscale(100%)',
-                }}
-              />
+              {/* Background image piece - nur anzeigen wenn enthüllt */}
+              {isRevealed && (
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage: `url(${appConfig.puzzleImage})`,
+                    backgroundSize: `${cols * 100}% ${rows * 100}%`,
+                    backgroundPosition: `${cols > 1 ? col * (100 / (cols - 1)) : 0}% ${rows > 1 ? row * (100 / (rows - 1)) : 0}%`,
+                  }}
+                />
+              )}
 
               {/* Overlay for unrevealed pieces */}
               {!isRevealed && (
@@ -133,7 +137,7 @@ export default function PuzzleBoard({ revealedPieces, totalPieces, compact = fal
       {/* Expanded Modal */}
       {expanded && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
           onClick={() => setExpanded(false)}
         >
           <div

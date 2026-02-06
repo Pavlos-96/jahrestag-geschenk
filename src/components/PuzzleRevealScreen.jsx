@@ -64,16 +64,19 @@ export default function PuzzleRevealScreen({
                   opacity: { duration: 0.3 },
                   scale: isNewPiece ? { duration: 0.5, times: [0, 0.5, 1] } : {},
                 }}
+                style={{ willChange: 'transform, opacity' }}
               >
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: `url(${appConfig.puzzleImage})`,
-                    backgroundSize: `${cols * 100}% ${rows * 100}%`,
-                    backgroundPosition: `${cols > 1 ? col * (100 / (cols - 1)) : 0}% ${rows > 1 ? row * (100 / (rows - 1)) : 0}%`,
-                    filter: isRevealed ? 'none' : 'blur(8px) grayscale(100%)',
-                  }}
-                />
+                {/* Background image piece - nur anzeigen wenn enthüllt */}
+                {isRevealed && (
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage: `url(${appConfig.puzzleImage})`,
+                      backgroundSize: `${cols * 100}% ${rows * 100}%`,
+                      backgroundPosition: `${cols > 1 ? col * (100 / (cols - 1)) : 0}% ${rows > 1 ? row * (100 / (rows - 1)) : 0}%`,
+                    }}
+                  />
+                )}
                 {!isRevealed && (
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center">
                     <span className="text-lg opacity-50">?</span>
