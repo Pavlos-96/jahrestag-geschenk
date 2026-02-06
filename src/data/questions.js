@@ -35,329 +35,330 @@ export const questions = [
       { id: "b", text: "Mai", correct: false },
       { id: "c", text: "Juni", correct: false }
     ],
-    correctFeedback: "Genau! Das war der Anfang von allem...",
+    correctFeedback: "Ja, Mochi! Das war ein richtig schöner Tag...",
     feedbackImage: "/images/1-Antwort.jpeg"
   },
   {
     id: 2,
-    question: "Was war unser erstes gemeinsames Essen?",
-    questionImage: "/images/2-Frage.jpeg",
+    question: "Wann hatten wir dieses süße Date?",
+    questionImage: "/images/6-Frage.jpeg",
     answers: [
-      { id: "a", text: "Pizza", correct: true },
-      { id: "b", text: "Sushi", correct: false },
-      { id: "c", text: "Burger", correct: false }
+      { id: "a", text: "Januar", correct: false },
+      { id: "b", text: "Februar", correct: false },
+      { id: "c", text: "März", correct: true }
     ],
-    correctFeedback: "Mmh, lecker! Das war so ein schöner Abend.",
-    feedbackImage: "/images/2-Antwort.jpeg"
+    correctFeedback: "Ja, Baby! Der Schal steht dir so gut!",
+    feedbackImage: "/images/6-Antwort.jpeg"
   },
   {
     id: 3,
-    question: "Welchen Film haben wir bei unserem ersten Filmabend geschaut?",
+    question: "Wann hast du mir dieses wunderschöne Bild geschickt?",
     questionImage: "/images/3-Frage.jpeg",
     answers: [
-      { id: "a", text: "Titanic", correct: false },
-      { id: "b", text: "The Notebook", correct: false },
-      { id: "c", text: "Inception", correct: true }
+      { id: "a", text: "Juni", correct: true },
+      { id: "b", text: "Juli", correct: false },
+      { id: "c", text: "August", correct: false }
     ],
-    correctFeedback: "Ein Traum in einem Traum... wie unsere Liebe!",
+    correctFeedback: "Ja, Baby! Das beste Hintegrundbild!",
     feedbackImage: "/images/3-Antwort.jpeg"
   },
   {
     id: 4,
-    question: "Was ist mein Lieblingsessen?",
+    question: "Welche romantischen Emojies hast du mir als Ausdruck deiner Liebe geschickt?",
     questionImage: "/images/4-Frage.jpeg",
     answers: [
-      { id: "a", text: "Lasagne", correct: true },
-      { id: "b", text: "Schnitzel", correct: false },
-      { id: "c", text: "Curry", correct: false }
+      { id: "a", text: "🥰❤️😘", correct: false },
+      { id: "b", text: "🫵🔪🔫", correct: true },
+      { id: "c", text: "❤️❤️❤️", correct: false }
     ],
-    correctFeedback: "Du kennst mich so gut!",
+    correctFeedback: "Du bist eine richtige Romantikerin!",
     feedbackImage: "/images/4-Antwort.jpeg"
   },
   {
     id: 5,
-    question: "Welche Jahreszeit lieben wir am meisten zusammen?",
+    question: "Wann hatten wir diesen schönen Tag in Augsburg?",
     questionImage: "/images/5-Frage.jpeg",
     answers: [
-      { id: "a", text: "Frühling", correct: false },
-      { id: "b", text: "Sommer", correct: false },
-      { id: "c", text: "Herbst", correct: true }
+      { id: "a", text: "März", correct: true },
+      { id: "b", text: "April", correct: false },
+      { id: "c", text: "Mai", correct: false }
     ],
-    correctFeedback: "Die bunten Blätter, warmer Kakao und Kuschelzeit!",
+    correctFeedback: "Mein erstes Mal in Augsburg!",
     feedbackImage: "/images/5-Antwort.jpeg"
   },
   {
     id: 6,
-    question: "Was machen wir am liebsten am Wochenende?",
-    questionImage: "/images/6-Frage.jpeg",
+    question: "Wann hatten wir diesen unvergesslichen Mini-Urlaub?",
+    questionImage: "/images/2-Frage.jpeg",
     answers: [
-      { id: "a", text: "Ausschlafen & Frühstücken", correct: true },
-      { id: "b", text: "Wandern gehen", correct: false },
-      { id: "c", text: "Shoppen", correct: false }
+      { id: "a", text: "Mai", correct: true },
+      { id: "b", text: "Juni", correct: false },
+      { id: "c", text: "Juli", correct: false }
     ],
-    correctFeedback: "Die beste Art, den Tag zu beginnen - zusammen!",
-    feedbackImage: "/images/6-Antwort.jpeg"
+    correctFeedback: "Yes, Baby! Ich werde nie vegessen, wie wir Stöcke gesammelt haben...",
+    feedbackImage: "/images/2-Antwort.jpeg"
   },
   {
     id: 7,
-    question: "Was ist unser Lieblingslied?",
+    question: "Warum willst du Kinder haben?",
     questionImage: "/images/7-Frage.jpeg",
     answers: [
-      { id: "a", text: "Perfect - Ed Sheeran", correct: false },
-      { id: "b", text: "All of Me - John Legend", correct: true },
-      { id: "c", text: "Thinking Out Loud", correct: false }
+      { id: "a", text: "Weil du Kinder liebst", correct: false },
+      { id: "b", text: "Weil du Mama sein willst", correct: false },
+      { id: "c", text: "Als Tarnung für deine peinlichen Hobbies", correct: true }
     ],
-    correctFeedback: "All of me loves all of you...",
+    correctFeedback: "So kenn ich mein Mochi...",
     feedbackImage: "/images/7-Antwort.jpeg"
   },
   {
     id: 8,
-    question: "Welches Tier wäre ich, wenn ich eins wäre?",
+    question: "Wann ist dieses süße Bild und der Sticker dazu entstanden?",
     questionImage: "/images/8-Frage.jpeg",
     answers: [
-      { id: "a", text: "Ein Bär", correct: false },
-      { id: "b", text: "Ein Hund", correct: true },
-      { id: "c", text: "Eine Katze", correct: false }
+      { id: "a", text: "März", correct: true },
+      { id: "b", text: "April", correct: false },
+      { id: "c", text: "Mai", correct: false }
     ],
-    correctFeedback: "Loyal, verspielt und immer an deiner Seite!",
+    correctFeedback: "Ja, mein pomputa-Lehrling! Bist da richtig am bugs fixen!",
     feedbackImage: "/images/8-Antwort.jpeg"
   },
   {
     id: 9,
-    question: "Wohin würde ich am liebsten mit dir reisen?",
+    question: "Warum bedrohst du mich hier? Was soll ich dir schicken?",
     questionImage: "/images/9-Frage.jpeg",
     answers: [
-      { id: "a", text: "Paris", correct: false },
-      { id: "b", text: "Edinburgh", correct: true },
-      { id: "c", text: "Rom", correct: false }
+      { id: "a", text: "meine Bankdaten", correct: false },
+      { id: "b", text: "ein Bild von mir", correct: false },
+      { id: "c", text: "den Song Iliovasilema", correct: true }
     ],
-    correctFeedback: "Rate mal wohin die Reise geht... 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    correctFeedback: "Richtig meine kleine Bedroherin!",
     feedbackImage: "/images/9-Antwort.jpeg"
   },
   {
     id: 10,
-    question: "Wohin würde ich am liebsten mit dir reisen?",
+    question: "Was sagt man über Männer mit großer Nase?",
     questionImage: "/images/10-Frage.jpeg",
     answers: [
-      { id: "a", text: "Paris", correct: false },
-      { id: "b", text: "Edinburgh", correct: true },
-      { id: "c", text: "Rom", correct: false }
+      { id: "a", text: "dass sie große Füße haben", correct: false },
+      { id: "b", text: "dass sie seh schön sind", correct: false },
+      { id: "c", text: "dass sie sehr schlau sind", correct: true }
     ],
-    correctFeedback: "Rate mal wohin die Reise geht... 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    correctFeedback: "Vielleicht sagt man noch was anderes über sie 👀",
     feedbackImage: "/images/10-Antwort.jpeg"
   },
   {
     id: 11,
-    question: "Wann hatten wir diesen schönen Tag mit Miri und Sina?",
+    question: "Wann habe ich dich in Mini-Golf fertig gemacht?",
     questionImage: "/images/11-Frage.jpeg",
     answers: [
-      { id: "a", text: "April", correct: true },
-      { id: "b", text: "Mai", correct: false },
-      { id: "c", text: "Juni", correct: false }
+      { id: "a", text: "Dezember", correct: false },
+      { id: "b", text: "Januar", correct: false },
+      { id: "c", text: "Februar", correct: true }
     ],
-    correctFeedback: "Genau! Das war der Anfang von allem...",
+    correctFeedback: "Beim Reaktionsspiel hast du mich fertig gemacht...",
     feedbackImage: "/images/11-Antwort.jpeg"
   },
   {
     id: 12,
-    question: "Was war unser erstes gemeinsames Essen?",
+    question: "Wozu habe ich dich hier herausgefordert?",
     questionImage: "/images/12-Frage.jpeg",
     answers: [
-      { id: "a", text: "Pizza", correct: true },
-      { id: "b", text: "Sushi", correct: false },
-      { id: "c", text: "Burger", correct: false }
+      { id: "a", text: "Billard spielen", correct: true },
+      { id: "b", text: "Backgammon spielen", correct: false },
+      { id: "c", text: "ein Duell auf Leben und Tod", correct: false }
     ],
-    correctFeedback: "Mmh, lecker! Das war so ein schöner Abend.",
+    correctFeedback: "Ich muss dich mal wieder fertig machen...",
     feedbackImage: "/images/12-Antwort.jpeg"
   },
   {
     id: 13,
-    question: "Welchen Film haben wir bei unserem ersten Filmabend geschaut?",
+    question: "Welcher Plan von dir geht hier auf?",
     questionImage: "/images/13-Frage.jpeg",
     answers: [
-      { id: "a", text: "Titanic", correct: false },
-      { id: "b", text: "The Notebook", correct: false },
-      { id: "c", text: "Inception", correct: true }
+      { id: "a", text: "mit mir tanzen", correct: false },
+      { id: "b", text: "dass ich ein Buch anfange zu lesen", correct: false },
+      { id: "c", text: "Harry Potter mit mir schauen", correct: true }
     ],
-    correctFeedback: "Ein Traum in einem Traum... wie unsere Liebe!",
+    correctFeedback: "Auch wenn ich während der Filme etwas abgelenkt war...",
     feedbackImage: "/images/13-Antwort.jpeg"
   },
   {
     id: 14,
-    question: "Was ist mein Lieblingsessen?",
+    question: "Warum beefen wir uns hier?",
     questionImage: "/images/14-Frage.jpeg",
     answers: [
-      { id: "a", text: "Lasagne", correct: true },
-      { id: "b", text: "Schnitzel", correct: false },
-      { id: "c", text: "Curry", correct: false }
+      { id: "a", text: "weil ich Harry Potter schlecht nenne", correct: false },
+      { id: "b", text: "weil ich dich alt nenne", correct: true },
+      { id: "c", text: "weil ich Song of Achilles schlecht nenne", correct: false }
     ],
-    correctFeedback: "Du kennst mich so gut!",
+    correctFeedback: "Mir sind keine guten falschen Antworten eingefallen...",
     feedbackImage: "/images/14-Antwort.jpeg"
   },
   {
     id: 15,
-    question: "Welche Jahreszeit lieben wir am meisten zusammen?",
+    question: "Was dachte ich hast du mir in den Rucksack gesteckt?",
     questionImage: "/images/15-Frage.jpeg",
     answers: [
-      { id: "a", text: "Frühling", correct: false },
-      { id: "b", text: "Sommer", correct: false },
-      { id: "c", text: "Herbst", correct: true }
+      { id: "a", text: "eine süße Nachricht", correct: false },
+      { id: "b", text: "ein kleines Geschenk", correct: false },
+      { id: "c", text: "eine Unterhose von dir", correct: true }
     ],
-    correctFeedback: "Die bunten Blätter, warmer Kakao und Kuschelzeit!",
+    correctFeedback: "Ein Mann darf doch träumen! Es war trotzdem sehr süß ❤️",
     feedbackImage: "/images/15-Antwort.jpeg"
   },
   {
     id: 16,
-    question: "Was machen wir am liebsten am Wochenende?",
+    question: "Was sage ich wo man bei alten Menschen die Hand küsst?",
     questionImage: "/images/16-Frage.jpeg",
     answers: [
-      { id: "a", text: "Ausschlafen & Frühstücken", correct: true },
-      { id: "b", text: "Wandern gehen", correct: false },
-      { id: "c", text: "Shoppen", correct: false }
+      { id: "a", text: "Handfläche", correct: true },
+      { id: "b", text: "Daumen", correct: false },
+      { id: "c", text: "Handgelenk", correct: false }
     ],
-    correctFeedback: "Die beste Art, den Tag zu beginnen - zusammen!",
+    correctFeedback: "Ich fand das sehr witzig!",
     feedbackImage: "/images/16-Antwort.jpeg"
   },
   {
     id: 17,
-    question: "Was ist unser Lieblingslied?",
+    question: "Was nennt dich dein Horoskop?",
     questionImage: "/images/17-Frage.jpeg",
     answers: [
-      { id: "a", text: "Perfect - Ed Sheeran", correct: false },
-      { id: "b", text: "All of Me - John Legend", correct: true },
-      { id: "c", text: "Thinking Out Loud", correct: false }
+      { id: "a", text: "humorless, unkind, narrow-minded", correct: false },
+      { id: "b", text: "intolerant, no fun, cold-hearted", correct: true },
+      { id: "c", text: "mean, unsympathetic, dumb", correct: false }
     ],
-    correctFeedback: "All of me loves all of you...",
+    correctFeedback: "Du bist nichts davon ❤️",
     feedbackImage: "/images/17-Antwort.jpeg"
   },
   {
     id: 18,
-    question: "Welches Tier wäre ich, wenn ich eins wäre?",
+    question: "Was war meine Empfehlung?",
     questionImage: "/images/18-Frage.jpeg",
     answers: [
-      { id: "a", text: "Ein Bär", correct: false },
-      { id: "b", text: "Ein Hund", correct: true },
-      { id: "c", text: "Eine Katze", correct: false }
+      { id: "a", text: "Ein Lied von Usher", correct: false },
+      { id: "b", text: "Ein Lied von Russ", correct: false },
+      { id: "c", text: "Slumber Rain (Regengeräusche)", correct: true }
     ],
     correctFeedback: "Loyal, verspielt und immer an deiner Seite!",
     feedbackImage: "/images/18-Antwort.jpeg"
   },
   {
-    id: 19,
-    question: "Wohin würde ich am liebsten mit dir reisen?",
+    id: 27,
+    question: "Sexträume mit wem?",
     questionImage: "/images/19-Frage.jpeg",
     answers: [
-      { id: "a", text: "Paris", correct: false },
-      { id: "b", text: "Edinburgh", correct: true },
-      { id: "c", text: "Rom", correct: false }
+
+      { id: "a", text: "Dich mit Hagrids Gesicht", correct: false },
+      { id: "b", text: "Hagrid mit deinem Gesicht", correct: true },
+      { id: "c", text: "Hagrid", correct: false }
     ],
-    correctFeedback: "Rate mal wohin die Reise geht... 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    correctFeedback: "Zum Glück spielt Hagrid in meinen Fantasien keine Rolle...",
     feedbackImage: "/images/19-Antwort.jpeg"
   },
   {
     id: 20,
-    question: "Wohin würde ich am liebsten mit dir reisen?",
+    question: "Wann war der Todestag des Lebkuchenmanns?",
     questionImage: "/images/20-Frage.jpeg",
     answers: [
-      { id: "a", text: "Paris", correct: false },
-      { id: "b", text: "Edinburgh", correct: true },
-      { id: "c", text: "Rom", correct: false }
+      { id: "a", text: "19.12.2024", correct: true },
+      { id: "b", text: "26.12.2024", correct: false },
+      { id: "c", text: "30.12.2024", correct: false }
     ],
-    correctFeedback: "Rate mal wohin die Reise geht... 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    correctFeedback: "Wir werden ihn immer in Gedanken behalten...",
     feedbackImage: "/images/20-Antwort.jpeg"
   },
   {
     id: 21,
-    question: "Wann hatten wir diesen schönen Tag mit Miri und Sina?",
+    question: "Was klang jetzt falsch? Was hast du geschrieben?",
     questionImage: "/images/21-Frage.jpeg",
     answers: [
-      { id: "a", text: "April", correct: true },
-      { id: "b", text: "Mai", correct: false },
-      { id: "c", text: "Juni", correct: false }
+      { id: "a", text: "ich will Sex mit dir", correct: true },
+      { id: "b", text: "dann hast du ein schönes Bild wenn dir mal langweilig ist und du nicht weist was du machen sollst", correct: false },
+      { id: "c", text: "heute Nacht gehts ab", correct: false }
     ],
-    correctFeedback: "Genau! Das war der Anfang von allem...",
+    correctFeedback: "Es klang ganz richtig 😏",
     feedbackImage: "/images/21-Antwort.jpeg"
   },
   {
     id: 22,
-    question: "Was war unser erstes gemeinsames Essen?",
+    question: "Was hast du für mich gemacht?",
     questionImage: "/images/22-Frage.jpeg",
     answers: [
-      { id: "a", text: "Pizza", correct: true },
-      { id: "b", text: "Sushi", correct: false },
-      { id: "c", text: "Burger", correct: false }
+      { id: "a", text: "Pizza gebacken", correct: false },
+      { id: "b", text: "mir ein naughty Bild geschickt", correct: false },
+      { id: "c", text: "ein Profilbild mit mir", correct: true }
     ],
     correctFeedback: "Mmh, lecker! Das war so ein schöner Abend.",
     feedbackImage: "/images/22-Antwort.jpeg"
   },
   {
     id: 23,
-    question: "Welchen Film haben wir bei unserem ersten Filmabend geschaut?",
+    question: "Was stand unten auf der Karte?",
     questionImage: "/images/23-Frage.jpeg",
     answers: [
-      { id: "a", text: "Titanic", correct: false },
-      { id: "b", text: "The Notebook", correct: false },
-      { id: "c", text: "Inception", correct: true }
+      { id: "a", text: "Ich bin im Gefängnis", correct: false },
+      { id: "b", text: "Ich bin immer bei dir", correct: true },
+      { id: "c", text: "Ich bin sehr schlau", correct: false }
     ],
-    correctFeedback: "Ein Traum in einem Traum... wie unsere Liebe!",
+    correctFeedback: "Und werde auch immer da sein ❤️",
     feedbackImage: "/images/23-Antwort.jpeg"
   },
   {
     id: 24,
-    question: "Was ist mein Lieblingsessen?",
+    question: "Was habe ich verstanden?",
     questionImage: "/images/24-Frage.jpeg",
     answers: [
-      { id: "a", text: "Lasagne", correct: true },
-      { id: "b", text: "Schnitzel", correct: false },
-      { id: "c", text: "Curry", correct: false }
+      { id: "a", text: "Bauch statt Buch und dachte, dass du viel furzen musst", correct: true },
+      { id: "b", text: "dass wir in der Nacht Sex haben werden", correct: false },
+      { id: "c", text: "dass wir in der Nacht spicy Sex haben werden", correct: false }
     ],
-    correctFeedback: "Du kennst mich so gut!",
+    correctFeedback: "Ich hätte niemals nur mit einem Daumen hoch darauf reagiert 😂",
     feedbackImage: "/images/24-Antwort.jpeg"
   },
   {
     id: 25,
-    question: "Welche Jahreszeit lieben wir am meisten zusammen?",
+    question: "Was war dein erster (dokumentierter) Spitzname für mich?",
     questionImage: "/images/25-Frage.jpeg",
     answers: [
-      { id: "a", text: "Frühling", correct: false },
-      { id: "b", text: "Sommer", correct: false },
-      { id: "c", text: "Herbst", correct: true }
+      { id: "a", text: "Mocombah", correct: false },
+      { id: "b", text: "Pavlito", correct: false },
+      { id: "c", text: "Arschiloch", correct: true }
     ],
-    correctFeedback: "Die bunten Blätter, warmer Kakao und Kuschelzeit!",
+    correctFeedback: "Nicht mein Lieblingsspitzname...",
     feedbackImage: "/images/25-Antwort.jpeg"
   },
   {
     id: 26,
-    question: "Was machen wir am liebsten am Wochenende?",
+    question: "Wo habe ich diese unfassbar hotten Bilder von dir geschossen?",
     questionImage: "/images/26-Frage.jpeg",
     answers: [
-      { id: "a", text: "Ausschlafen & Frühstücken", correct: true },
-      { id: "b", text: "Wandern gehen", correct: false },
-      { id: "c", text: "Shoppen", correct: false }
+      { id: "a", text: "Hamburg", correct: true },
+      { id: "b", text: "Tromsø", correct: false },
+      { id: "c", text: "Italien", correct: false }
     ],
-    correctFeedback: "Die beste Art, den Tag zu beginnen - zusammen!",
+    correctFeedback: "Da fällt dir ja glatt die Sohle vom Schuh!",
     feedbackImage: "/images/26-Antwort.jpeg"
   },
   {
-    id: 27,
-    question: "Was machen wir am liebsten am Wochenende?",
+    id: 19,
+    question: "Was habe ich geantwortet?",
     questionImage: "/images/27-Frage.jpeg",
     answers: [
-      { id: "a", text: "Ausschlafen & Frühstücken", correct: true },
-      { id: "b", text: "Wandern gehen", correct: false },
-      { id: "c", text: "Shoppen", correct: false }
+      { id: "a", text: "süß", correct: false },
+      { id: "b", text: "scharf", correct: false },
+      { id: "c", text: "hot", correct: true }
     ],
-    correctFeedback: "Die beste Art, den Tag zu beginnen - zusammen!",
+    correctFeedback: "Ich will dich öfter in dem Outfit sehen!",
     feedbackImage: "/images/27-Antwort.jpeg"
   },
   {
     id: 28,
-    question: "Was machen wir am liebsten am Wochenende?",
+    question: "Was dachte ich hier? (gibt keine falsche Antwort!)",
     questionImage: "/images/28-Frage.jpeg",
     answers: [
-      { id: "a", text: "Ausschlafen & Frühstücken", correct: true },
-      { id: "b", text: "Wandern gehen", correct: false },
-      { id: "c", text: "Shoppen", correct: false }
+      { id: "a", text: "Ich bin verliebt", correct: true },
+      { id: "b", text: "das ist die Frau, die ich heiraten werde", correct: true },
+      { id: "c", text: "wie kann man nur so schön sein", correct: true }
     ],
     correctFeedback: "Die beste Art, den Tag zu beginnen - zusammen!",
     feedbackImage: "/images/28-Antwort.jpeg"

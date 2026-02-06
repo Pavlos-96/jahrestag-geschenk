@@ -6,7 +6,10 @@ import AnswerFeedback from './components/AnswerFeedback';
 import PuzzleBoard from './components/PuzzleBoard';
 import PuzzleRevealScreen from './components/PuzzleRevealScreen';
 import RevealScreen from './components/RevealScreen';
-import { questions } from './data/questions';
+import { questions as unsortedQuestions } from './data/questions';
+
+// Sortiere Fragen nach id
+const questions = [...unsortedQuestions].sort((a, b) => a.id - b.id);
 
 // Game states
 const STATES = {
