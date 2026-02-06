@@ -47,7 +47,7 @@ export const questions = [
       { id: "b", text: "Februar", correct: false },
       { id: "c", text: "März", correct: true }
     ],
-    correctFeedback: "Ja, Baby! Der Schal steht dir so gut!",
+    correctFeedback: "Der Schal steht dir so gut!",
     feedbackImage: "/images/6-Antwort.jpeg"
   },
   {
@@ -59,7 +59,7 @@ export const questions = [
       { id: "b", text: "Juli", correct: false },
       { id: "c", text: "August", correct: false }
     ],
-    correctFeedback: "Ja, Baby! Das beste Hintegrundbild!",
+    correctFeedback: "Das beste Hintegrundbild! Du bist so schön",
     feedbackImage: "/images/3-Antwort.jpeg"
   },
   {
@@ -71,7 +71,7 @@ export const questions = [
       { id: "b", text: "🫵🔪🔫", correct: true },
       { id: "c", text: "❤️❤️❤️", correct: false }
     ],
-    correctFeedback: "Du bist eine richtige Romantikerin!",
+    correctFeedback: "richtige Romantikerin!",
     feedbackImage: "/images/4-Antwort.jpeg"
   },
   {
@@ -95,7 +95,7 @@ export const questions = [
       { id: "b", text: "Juni", correct: false },
       { id: "c", text: "Juli", correct: false }
     ],
-    correctFeedback: "Yes, Baby! Ich werde nie vegessen, wie wir Stöcke gesammelt haben...",
+    correctFeedback: "Ich werde nie vegessen, wie wir Stöcke gesammelt haben...",
     feedbackImage: "/images/2-Antwort.jpeg"
   },
   {
@@ -163,8 +163,8 @@ export const questions = [
     question: "Wozu habe ich dich hier herausgefordert?",
     questionImage: "/images/12-Frage.jpeg",
     answers: [
-      { id: "a", text: "Billard spielen", correct: true },
-      { id: "b", text: "Backgammon spielen", correct: false },
+      { id: "a", text: "Billard spielen", correct: false },
+      { id: "b", text: "Backgammon spielen", correct: true },
       { id: "c", text: "ein Duell auf Leben und Tod", correct: false }
     ],
     correctFeedback: "Ich muss dich mal wieder fertig machen...",
@@ -215,7 +215,7 @@ export const questions = [
       { id: "b", text: "Daumen", correct: false },
       { id: "c", text: "Handgelenk", correct: false }
     ],
-    correctFeedback: "Ich fand das sehr witzig!",
+    correctFeedback: "Ich fand das sehr witzig...",
     feedbackImage: "/images/16-Antwort.jpeg"
   },
   {
@@ -239,7 +239,7 @@ export const questions = [
       { id: "b", text: "Ein Lied von Russ", correct: false },
       { id: "c", text: "Slumber Rain (Regengeräusche)", correct: true }
     ],
-    correctFeedback: "Loyal, verspielt und immer an deiner Seite!",
+    correctFeedback: "Richtiger Banger!",
     feedbackImage: "/images/18-Antwort.jpeg"
   },
   {
@@ -272,8 +272,8 @@ export const questions = [
     question: "Was klang jetzt falsch? Was hast du geschrieben?",
     questionImage: "/images/21-Frage.jpeg",
     answers: [
-      { id: "a", text: "ich will Sex mit dir", correct: true },
-      { id: "b", text: "dann hast du ein schönes Bild wenn dir mal langweilig ist und du nicht weist was du machen sollst", correct: false },
+      { id: "a", text: "ich will Sex mit dir", correct: false },
+      { id: "b", text: "dann hast du ein schönes Bild wenn dir mal langweilig ist und du nicht weist was du machen sollst", correct: true },
       { id: "c", text: "heute Nacht gehts ab", correct: false }
     ],
     correctFeedback: "Es klang ganz richtig 😏",
@@ -288,7 +288,7 @@ export const questions = [
       { id: "b", text: "mir ein naughty Bild geschickt", correct: false },
       { id: "c", text: "ein Profilbild mit mir", correct: true }
     ],
-    correctFeedback: "Mmh, lecker! Das war so ein schöner Abend.",
+    correctFeedback: "So süß! Ich fress dich!",
     feedbackImage: "/images/22-Antwort.jpeg"
   },
   {
@@ -300,7 +300,7 @@ export const questions = [
       { id: "b", text: "Ich bin immer bei dir", correct: true },
       { id: "c", text: "Ich bin sehr schlau", correct: false }
     ],
-    correctFeedback: "Und werde auch immer da sein ❤️",
+    correctFeedback: "Und werde auch immer bei dir sein ❤️",
     feedbackImage: "/images/23-Antwort.jpeg"
   },
   {
@@ -348,7 +348,7 @@ export const questions = [
       { id: "b", text: "scharf", correct: false },
       { id: "c", text: "hot", correct: true }
     ],
-    correctFeedback: "Ich will dich öfter in dem Outfit sehen!",
+    correctFeedback: "Ich will dich öfter in dem Outfit sehen 👀",
     feedbackImage: "/images/27-Antwort.jpeg"
   },
   {
@@ -360,7 +360,7 @@ export const questions = [
       { id: "b", text: "das ist die Frau, die ich heiraten werde", correct: true },
       { id: "c", text: "wie kann man nur so schön sein", correct: true }
     ],
-    correctFeedback: "Die beste Art, den Tag zu beginnen - zusammen!",
+    correctFeedback: "Ich liebe dich über alles baby!",
     feedbackImage: "/images/28-Antwort.jpeg"
   }
 ];
