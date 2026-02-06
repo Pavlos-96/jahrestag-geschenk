@@ -5,7 +5,8 @@ export default function QuizCard({
   currentQuestion,
   totalQuestions,
   onAnswer,
-  disabled
+  disabled,
+  showQuestionImage = true,
 }) {
   const containerVariants = {
     hidden: { opacity: 0, x: 50 },
@@ -48,8 +49,8 @@ export default function QuizCard({
         </div>
       </div>
 
-      {/* Question Image - if present */}
-      {question.questionImage && (
+      {/* Question Image - if present (ausgeblendet wenn App es in der oberen Zeile zeigt) */}
+      {showQuestionImage && question.questionImage && (
         <motion.div
           className="mb-4 rounded-2xl overflow-hidden shadow-lg"
           initial={{ scale: 0.9, opacity: 0 }}
@@ -59,17 +60,17 @@ export default function QuizCard({
           <img
             src={question.questionImage}
             alt="Frage-Bild"
-            className="w-full max-h-[60vh] object-contain"
+            className="w-full max-h-[60vh] object-contain image-crop-vertical"
           />
         </motion.div>
       )}
 
       {/* Question - mobile optimized, no speech bubble */}
       <motion.div
-        className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-5 mb-4"
+        className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-5"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.4, delay: question.questionImage ? 0.1 : 0 }}
+        transition={{ duration: 0.4, delay: (showQuestionImage && question.questionImage) ? 0.1 : 0 }}
       >
         <h2
           className="text-xl text-center text-gray-700 font-medium leading-relaxed"
@@ -78,6 +79,9 @@ export default function QuizCard({
           {question.question}
         </h2>
       </motion.div>
+
+      {/* Abstand zwischen Frage und Antwort A – in index.css: --spacer-question-answers */}
+      <div className="question-answers-spacer" aria-hidden="true" />
 
       {/* Answers - mobile optimized, single column */}
       <div className="flex flex-col gap-3">

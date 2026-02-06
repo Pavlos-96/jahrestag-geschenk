@@ -8,6 +8,15 @@
   --color-pink-dark: #FF69B4;
   --color-gold: #D4A574;
   --color-gold-light: #E8C9A0;
+
+  /* Bild-Beschneidung oben/unten (Frage- & Antwortbilder).
+     Z.B. 15px = 15px oben und 15px unten abschneiden.
+     Auf 0px setzen = kein Beschneiden. */
+  --image-crop-vertical: 15px;
+
+  /* Abstand zwischen Frage und Antwortmöglichkeit A.
+     Größerer Wert = mehr Abstand (z.B. 1.5rem, 2rem, 24px). */
+  --spacer-question-answers: 1.5rem;
 }
 
 * {
@@ -87,4 +96,16 @@ h1, h2, h3 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-pink-dark);
+}
+
+/* Leichtes Beschneiden oben/unten für Frage- und Antwortbilder */
+.image-crop-vertical {
+  clip-path: inset(var(--image-crop-vertical) 0 var(--image-crop-vertical) 0);
+}
+
+/* Fester Abstand zwischen Frage und erstem Antwort-Button */
+.question-answers-spacer {
+  height: var(--spacer-question-answers);
+  min-height: var(--spacer-question-answers);
+  flex-shrink: 0;
 }

@@ -4,6 +4,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 import QuizCard from './components/QuizCard';
 import AnswerFeedback from './components/AnswerFeedback';
 import PuzzleBoard from './components/PuzzleBoard';
+import PuzzleRevealScreen from './components/PuzzleRevealScreen';
 import RevealScreen from './components/RevealScreen';
 import { questions } from './data/questions';
 
@@ -12,6 +13,7 @@ const STATES = {
   WELCOME: 'welcome',
   QUIZ: 'quiz',
   FEEDBACK: 'feedback',
+  PUZZLE_REVEAL: 'puzzle_reveal',
   REVEAL: 'reveal',
 };
 
@@ -66,11 +68,18 @@ function App() {
   const handleContinue = useCallback(() => {
     if (isLastQuestion) {
       setGameState(STATES.REVEAL);
+    } else if (lastAnswer?.isCorrect) {
+      setGameState(STATES.PUZZLE_REVEAL);
     } else {
       setCurrentQuestionIndex((prev) => prev + 1);
       setGameState(STATES.QUIZ);
     }
-  }, [isLastQuestion]);
+  }, [isLastQuestion, lastAnswer?.isCorrect]);
+
+  const handleRevealComplete = useCallback(() => {
+    setCurrentQuestionIndex((prev) => prev + 1);
+    setGameState(STATES.QUIZ);
+  }, []);
 
   const handleRestart = useCallback(() => {
     setGameState(STATES.WELCOME);
@@ -90,36 +99,68 @@ function App() {
 
         {/* Quiz */}
         {gameState === STATES.QUIZ && (
-          <div key="quiz" className="min-h-screen flex flex-col items-center justify-center p-4">
-            {/* Puzzle preview - hidden when question has an image */}
-            {!currentQuestion.questionImage && (
-              <PuzzleBoard
-                revealedPieces={revealedPieces}
-                totalPieces={questions.length}
-              />
+          <div key="quiz" className="min-h-screen flex flex-col items-center justify-center p-4 w-full max-w-2xl mx-auto">
+            {/* Fragebild mit Puzzle als Overlay oben rechts */}
+            {currentQuestion.questionImage && (
+              <div className="relative rounded-2xl overflow-hidden shadow-lg mb-4 w-full">
+                <img
+                  src={currentQuestion.questionImage}
+                  alt="Frage-Bild"
+                  className="w-full max-h-[50vh] object-contain image-crop-vertical"
+                />
+                {/* Puzzle als Overlay oben rechts */}
+                <div className="absolute top-2 right-2">
+                  <PuzzleBoard
+                    compact
+                    revealedPieces={revealedPieces}
+                    totalPieces={questions.length}
+                  />
+                </div>
+              </div>
             )}
 
-            {/* Question */}
+            {/* Falls kein Fragebild, Puzzle separat anzeigen */}
+            {!currentQuestion.questionImage && (
+              <div className="mb-4">
+                <PuzzleBoard
+                  compact
+                  revealedPieces={revealedPieces}
+                  totalPieces={questions.length}
+                />
+              </div>
+            )}
+
+            {/* Frage-Text + Antworten */}
             <QuizCard
               question={currentQuestion}
               currentQuestion={currentQuestionIndex + 1}
               totalQuestions={questions.length}
               onAnswer={handleAnswer}
               disabled={false}
+              showQuestionImage={false}
             />
           </div>
+        )}
+
+        {/* Enthüllungs-Animation nach richtiger Antwort, vor nächster Frage */}
+        {gameState === STATES.PUZZLE_REVEAL && (
+          <PuzzleRevealScreen
+            key="puzzle_reveal"
+            revealedPieces={revealedPieces}
+            totalPieces={questions.length}
+            randomPieceOrder={randomPieceOrder}
+            onComplete={handleRevealComplete}
+          />
         )}
 
         {/* Feedback */}
         {gameState === STATES.FEEDBACK && (
           <div key="feedback" className="min-h-screen flex flex-col items-center justify-center p-4">
-            {/* Show puzzle in background - hidden when question had an image */}
-            {!lastAnswer?.hadImage && (
-              <PuzzleBoard
-                revealedPieces={revealedPieces}
-                totalPieces={questions.length}
-              />
-            )}
+            {/* Puzzle im Hintergrund – immer anzeigen */}
+            <PuzzleBoard
+              revealedPieces={revealedPieces}
+              totalPieces={questions.length}
+            />
 
             {/* Feedback overlay */}
             <AnswerFeedback
